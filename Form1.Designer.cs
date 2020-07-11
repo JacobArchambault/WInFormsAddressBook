@@ -30,6 +30,7 @@
         {
             this.nameLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.emailAddressLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -48,11 +49,21 @@
             this.nameTextBox.Size = new System.Drawing.Size(150, 31);
             this.nameTextBox.TabIndex = 1;
             // 
+            // emailAddressLabel
+            // 
+            this.emailAddressLabel.AutoSize = true;
+            this.emailAddressLabel.Location = new System.Drawing.Point(12, 56);
+            this.emailAddressLabel.Name = "emailAddressLabel";
+            this.emailAddressLabel.Size = new System.Drawing.Size(128, 25);
+            this.emailAddressLabel.TabIndex = 2;
+            this.emailAddressLabel.Text = "Email Address:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.emailAddressLabel);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
             this.Name = "Form1";
@@ -66,6 +77,7 @@
 
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Label emailAddressLabel;
     }
 }
 
