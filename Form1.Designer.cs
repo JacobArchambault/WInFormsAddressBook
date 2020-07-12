@@ -1,6 +1,6 @@
 ﻿namespace WinFormsAddressBook
 {
-    partial class Form1
+    partial class AddressBook
     {
         /// <summary>
         ///  Required designer variable.
@@ -55,7 +55,7 @@
             // emailAddressLabel
             // 
             this.emailAddressLabel.AutoSize = true;
-            this.emailAddressLabel.Location = new System.Drawing.Point(12, 56);
+            this.emailAddressLabel.Location = new System.Drawing.Point(12, 155);
             this.emailAddressLabel.Name = "emailAddressLabel";
             this.emailAddressLabel.Size = new System.Drawing.Size(128, 25);
             this.emailAddressLabel.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // emailAddressTextBox
             // 
-            this.emailAddressTextBox.Location = new System.Drawing.Point(146, 53);
+            this.emailAddressTextBox.Location = new System.Drawing.Point(146, 149);
             this.emailAddressTextBox.Name = "emailAddressTextBox";
             this.emailAddressTextBox.Size = new System.Drawing.Size(150, 31);
             this.emailAddressTextBox.TabIndex = 3;
@@ -71,7 +71,7 @@
             // phoneNumberLabel
             // 
             this.phoneNumberLabel.AutoSize = true;
-            this.phoneNumberLabel.Location = new System.Drawing.Point(12, 125);
+            this.phoneNumberLabel.Location = new System.Drawing.Point(-1, 202);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
             this.phoneNumberLabel.Size = new System.Drawing.Size(141, 25);
             this.phoneNumberLabel.TabIndex = 4;
@@ -79,12 +79,12 @@
             // 
             // phoneNumberTextBox
             // 
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(159, 119);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(146, 199);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(150, 31);
             this.phoneNumberTextBox.TabIndex = 5;
             // 
-            // Form1
+            // AddressBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,8 +95,8 @@
             this.Controls.Add(this.emailAddressLabel);
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "AddressBook";
+            this.Text = "Address Book";
             this.ResumeLayout(false);
             this.PerformLayout();
 

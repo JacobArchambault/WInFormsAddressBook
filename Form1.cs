@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsAddressBook
 {
-    public partial class Form1 : Form
+    public partial class AddressBook : Form
     {
-        public Form1()
+        public AddressBook()
         {
             InitializeComponent();
         }
