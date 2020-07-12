@@ -143,6 +143,7 @@
             this.Controls.Add(this.nameLabel);
             this.Name = "Form1";
             this.Text = "Address Book";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailAddressErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberErrorProvider)).EndInit();
@@ -160,7 +161,6 @@
         private System.Windows.Forms.Label phoneNumberLabel;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Button AddEntryButton;
         private System.Windows.Forms.Button addEntryButton;
         private System.Windows.Forms.ErrorProvider nameErrorProvider;
         private System.Windows.Forms.ErrorProvider emailAddressErrorProvider;
