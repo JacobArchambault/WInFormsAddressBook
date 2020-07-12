@@ -33,6 +33,7 @@
             this.emailAddressLabel = new System.Windows.Forms.Label();
             this.emailAddressTextBox = new System.Windows.Forms.TextBox();
             this.phoneNumberLabel = new System.Windows.Forms.Label();
+            this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -76,11 +77,19 @@
             this.phoneNumberLabel.TabIndex = 4;
             this.phoneNumberLabel.Text = "Phone Number: ";
             // 
+            // phoneNumberTextBox
+            // 
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(159, 119);
+            this.phoneNumberTextBox.Name = "phoneNumberTextBox";
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(150, 31);
+            this.phoneNumberTextBox.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.phoneNumberTextBox);
             this.Controls.Add(this.phoneNumberLabel);
             this.Controls.Add(this.emailAddressTextBox);
             this.Controls.Add(this.emailAddressLabel);
@@ -100,6 +109,7 @@
         private System.Windows.Forms.Label emailAddressLabel;
         private System.Windows.Forms.TextBox emailAddressTextBox;
         private System.Windows.Forms.Label phoneNumberLabel;
+        private System.Windows.Forms.TextBox phoneNumberTextBox;
     }
 }
 
