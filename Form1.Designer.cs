@@ -35,6 +35,7 @@
             this.phoneNumberLabel = new System.Windows.Forms.Label();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.addEntryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -95,11 +96,22 @@
             this.titleLabel.TabIndex = 6;
             this.titleLabel.Text = "Fill out the fields below to add a new entry";
             // 
+            // addEntryButton
+            // 
+            this.addEntryButton.Location = new System.Drawing.Point(185, 280);
+            this.addEntryButton.Name = "addEntryButton";
+            this.addEntryButton.Size = new System.Drawing.Size(112, 34);
+            this.addEntryButton.TabIndex = 7;
+            this.addEntryButton.Text = "Add Entry";
+            this.addEntryButton.UseVisualStyleBackColor = true;
+            this.addEntryButton.Click += new System.EventHandler(this.addEntryButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.addEntryButton);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.phoneNumberTextBox);
             this.Controls.Add(this.phoneNumberLabel);
@@ -123,6 +135,8 @@
         private System.Windows.Forms.Label phoneNumberLabel;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Button AddEntryButton;
+        private System.Windows.Forms.Button addEntryButton;
     }
 }
 

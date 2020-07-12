@@ -17,5 +17,9 @@ namespace WinFormsAddressBook
             InitializeComponent();
         }
 
+        private void addEntryButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
