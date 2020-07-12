@@ -48,7 +48,7 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(12, 81);
+            this.nameLabel.Location = new System.Drawing.Point(12, 47);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(68, 25);
             this.nameLabel.TabIndex = 0;
@@ -56,16 +56,16 @@
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(185, 81);
+            this.nameTextBox.Location = new System.Drawing.Point(159, 44);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(150, 31);
+            this.nameTextBox.Size = new System.Drawing.Size(325, 31);
             this.nameTextBox.TabIndex = 1;
             this.nameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NameTextBox_Validating);
             // 
             // emailAddressLabel
             // 
             this.emailAddressLabel.AutoSize = true;
-            this.emailAddressLabel.Location = new System.Drawing.Point(12, 131);
+            this.emailAddressLabel.Location = new System.Drawing.Point(12, 87);
             this.emailAddressLabel.Name = "emailAddressLabel";
             this.emailAddressLabel.Size = new System.Drawing.Size(128, 25);
             this.emailAddressLabel.TabIndex = 2;
@@ -73,16 +73,16 @@
             // 
             // emailAddressTextBox
             // 
-            this.emailAddressTextBox.Location = new System.Drawing.Point(185, 131);
+            this.emailAddressTextBox.Location = new System.Drawing.Point(159, 84);
             this.emailAddressTextBox.Name = "emailAddressTextBox";
-            this.emailAddressTextBox.Size = new System.Drawing.Size(150, 31);
+            this.emailAddressTextBox.Size = new System.Drawing.Size(325, 31);
             this.emailAddressTextBox.TabIndex = 3;
             this.emailAddressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.EmailAddressTextBox_Validating);
             // 
             // phoneNumberLabel
             // 
             this.phoneNumberLabel.AutoSize = true;
-            this.phoneNumberLabel.Location = new System.Drawing.Point(12, 210);
+            this.phoneNumberLabel.Location = new System.Drawing.Point(12, 124);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
             this.phoneNumberLabel.Size = new System.Drawing.Size(141, 25);
             this.phoneNumberLabel.TabIndex = 4;
@@ -90,9 +90,9 @@
             // 
             // phoneNumberTextBox
             // 
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(185, 210);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(159, 121);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(150, 31);
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(325, 31);
             this.phoneNumberTextBox.TabIndex = 5;
             this.phoneNumberTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PhoneNumberTextBox_Validating);
             // 
@@ -100,7 +100,7 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.titleLabel.Location = new System.Drawing.Point(21, 28);
+            this.titleLabel.Location = new System.Drawing.Point(12, 9);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(472, 32);
             this.titleLabel.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             // addEntryButton
             // 
-            this.addEntryButton.Location = new System.Drawing.Point(185, 280);
+            this.addEntryButton.Location = new System.Drawing.Point(372, 158);
             this.addEntryButton.Name = "addEntryButton";
             this.addEntryButton.Size = new System.Drawing.Size(112, 34);
             this.addEntryButton.TabIndex = 7;
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(525, 211);
             this.Controls.Add(this.addEntryButton);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.phoneNumberTextBox);
