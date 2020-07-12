@@ -96,7 +96,7 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.nameLabel);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Address Book";
             this.ResumeLayout(false);
             this.PerformLayout();
 
