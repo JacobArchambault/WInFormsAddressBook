@@ -14,6 +14,7 @@ namespace WinFormsAddressBook
 {
     public partial class Form1 : Form
     {
+        List<Entry> entryList = new List<Entry>();
         public Form1()
         {
             InitializeComponent();
@@ -21,8 +22,14 @@ namespace WinFormsAddressBook
 
         private void addEntryButton_Click(object sender, EventArgs e)
         {
+            Entry entry = CreateNewEntry();
+            entryList.Add(entry);
         }
 
+        private Entry CreateNewEntry()
+        {
+            return new Entry { Name = nameTextBox.Text, EmailAddress = emailAddressTextBox.Text, PhoneNumber = phoneNumberTextBox.Text };
+        }
         private void nameTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(nameTextBox.Text))
