@@ -38,7 +38,9 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.addEntryButton = new System.Windows.Forms.Button();
             this.nameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.emailAddressErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailAddressErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -73,6 +75,7 @@
             this.emailAddressTextBox.Name = "emailAddressTextBox";
             this.emailAddressTextBox.Size = new System.Drawing.Size(150, 31);
             this.emailAddressTextBox.TabIndex = 3;
+            this.emailAddressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailAddressTextBox_Validating);
             // 
             // phoneNumberLabel
             // 
@@ -114,6 +117,10 @@
             // 
             this.nameErrorProvider.ContainerControl = this;
             // 
+            // emaillAddressErrorProvider
+            // 
+            this.emailAddressErrorProvider.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -130,6 +137,7 @@
             this.Name = "Form1";
             this.Text = "Address Book";
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailAddressErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +155,7 @@
         private System.Windows.Forms.Button AddEntryButton;
         private System.Windows.Forms.Button addEntryButton;
         private System.Windows.Forms.ErrorProvider nameErrorProvider;
+        private System.Windows.Forms.ErrorProvider emailAddressErrorProvider;
     }
 }
 
