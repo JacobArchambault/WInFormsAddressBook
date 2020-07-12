@@ -40,6 +40,7 @@
             this.nameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.emailAddressErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.phoneNumberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.warningLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailAddressErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneNumberErrorProvider)).BeginInit();
@@ -128,11 +129,20 @@
             // 
             this.phoneNumberErrorProvider.ContainerControl = this;
             // 
+            // warningLabel
+            // 
+            this.warningLabel.AutoSize = true;
+            this.warningLabel.Location = new System.Drawing.Point(12, 163);
+            this.warningLabel.Name = "warningLabel";
+            this.warningLabel.Size = new System.Drawing.Size(0, 25);
+            this.warningLabel.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 211);
+            this.Controls.Add(this.warningLabel);
             this.Controls.Add(this.addEntryButton);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.phoneNumberTextBox);
@@ -165,6 +175,7 @@
         private System.Windows.Forms.ErrorProvider nameErrorProvider;
         private System.Windows.Forms.ErrorProvider emailAddressErrorProvider;
         private System.Windows.Forms.ErrorProvider phoneNumberErrorProvider;
+        private System.Windows.Forms.Label warningLabel;
     }
 }
 

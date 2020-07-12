@@ -30,6 +30,13 @@ namespace WinFormsAddressBook
             {
                 Entry entry = CreateNewEntry();
                 entryList.Add(entry);
+                warningLabel.ForeColor = Color.Black;
+                ClearFields();
+                warningLabel.Text = "Added entry successfully.";
+            }
+            else
+            {
+                warningLabel.ForeColor = Color.Red;
             }
         }
         #endregion
@@ -38,9 +45,10 @@ namespace WinFormsAddressBook
         {
             if (string.IsNullOrWhiteSpace(nameTextBox.Text))
             {
+                string warningString = "Name is required";
                 e.Cancel = true;
-                nameTextBox.Focus();
-                nameErrorProvider.SetError(nameTextBox, "Please enter a name for your entry");
+                nameErrorProvider.SetError(nameTextBox, warningString);
+                warningLabel.Text = warningString;
             }
             else
             {
@@ -50,12 +58,12 @@ namespace WinFormsAddressBook
 
         private void EmailAddressTextBox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateRegex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$", emailAddressTextBox, emailAddressErrorProvider, "Please enter a valid email address", e);
+            ValidateRegex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$", emailAddressTextBox, emailAddressErrorProvider, "Email address is invalid", e);
         }
 
         private void PhoneNumberTextBox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateRegex(@"^[0-9]{10}$", phoneNumberTextBox, phoneNumberErrorProvider, "Please enter a ten digit phone number, including area code, without dashes or spaces.", e);
+            ValidateRegex(@"^[0-9]{10}$", phoneNumberTextBox, phoneNumberErrorProvider, "Phone number must be 10 numbers, no dashes.", e);
         }
         #endregion
         #region 1.3 Form close event handler
@@ -76,6 +84,10 @@ namespace WinFormsAddressBook
         {
             return new Entry { Name = nameTextBox.Text, EmailAddress = emailAddressTextBox.Text, PhoneNumber = phoneNumberTextBox.Text };
         }
+        private void ClearFields()
+        {
+            nameTextBox.Text = ""; emailAddressTextBox.Text = ""; phoneNumberTextBox.Text = "";
+        }
 
         private void ValidateRegex(string regexPattern, TextBox textBoxToValidate, ErrorProvider errorProvider, string errorProviderMessage, CancelEventArgs e)
         {
@@ -83,8 +95,8 @@ namespace WinFormsAddressBook
             if (!Regex.IsMatch(textBoxToValidate.Text, regexPattern))
             {
                 e.Cancel = true;
-                textBoxToValidate.Focus();
                 errorProvider.SetError(textBoxToValidate, errorProviderMessage);
+                warningLabel.Text = errorProviderMessage;
             }
             else
             {
@@ -101,10 +113,8 @@ namespace WinFormsAddressBook
             {
                 // ...get the entry number
                 int entryNumber = fromEntryList.IndexOf(entry);
-                // ...trim the phone number of dashes.
-                string trimmedPhoneNumber = Regex.Replace(entry.PhoneNumber, "-", "");
-                // ...and write that entry's number, name, address, and phone number trimmed of dashes to the file on a single line.
-                writer.WriteLine($"Entry {entryNumber + 1}:\tName: {entry.Name},\temail address: {entry.EmailAddress},\tphone number: *{trimmedPhoneNumber}*");
+                // ...and write that entry's number, name, address, and phone number to the file on a single line.
+                writer.WriteLine($"Entry {entryNumber + 1}:\tName: {entry.Name},\temail address: {entry.EmailAddress},\tphone number: *{entry.PhoneNumber}*");
             });
         }
 
