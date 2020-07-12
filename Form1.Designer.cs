@@ -60,7 +60,7 @@
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(150, 31);
             this.nameTextBox.TabIndex = 1;
-            this.nameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.nameTextBox_Validating);
+            this.nameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.NameTextBox_Validating);
             // 
             // emailAddressLabel
             // 
@@ -77,7 +77,7 @@
             this.emailAddressTextBox.Name = "emailAddressTextBox";
             this.emailAddressTextBox.Size = new System.Drawing.Size(150, 31);
             this.emailAddressTextBox.TabIndex = 3;
-            this.emailAddressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.emailAddressTextBox_Validating);
+            this.emailAddressTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.EmailAddressTextBox_Validating);
             // 
             // phoneNumberLabel
             // 
@@ -94,7 +94,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(150, 31);
             this.phoneNumberTextBox.TabIndex = 5;
-            this.phoneNumberTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.phoneNumberTextBox_Validating);
+            this.phoneNumberTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.PhoneNumberTextBox_Validating);
             // 
             // titleLabel
             // 
@@ -114,7 +114,7 @@
             this.addEntryButton.TabIndex = 7;
             this.addEntryButton.Text = "Add Entry";
             this.addEntryButton.UseVisualStyleBackColor = true;
-            this.addEntryButton.Click += new System.EventHandler(this.addEntryButton_Click);
+            this.addEntryButton.Click += new System.EventHandler(this.AddEntryButton_Click);
             // 
             // nameErrorProvider
             // 

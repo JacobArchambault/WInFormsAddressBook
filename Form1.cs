@@ -16,23 +16,25 @@ namespace WinFormsAddressBook
 {
     public partial class Form1 : Form
     {
-        List<Entry> entryList = new List<Entry>();
+        readonly List<Entry> entryList = new List<Entry>();
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void addEntryButton_Click(object sender, EventArgs e)
+        #region 1 Event handlers
+        #region 1.1. Click event handlers
+        private void AddEntryButton_Click(object sender, EventArgs e)
         {
-            Entry entry = CreateNewEntry();
-            entryList.Add(entry);
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                Entry entry = CreateNewEntry();
+                entryList.Add(entry);
+            }
         }
-
-        private Entry CreateNewEntry()
-        {
-            return new Entry { Name = nameTextBox.Text, EmailAddress = emailAddressTextBox.Text, PhoneNumber = phoneNumberTextBox.Text };
-        }
-        private void nameTextBox_Validating(object sender, CancelEventArgs e)
+        #endregion
+        #region 1.2 Validation event handlers
+        private void NameTextBox_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(nameTextBox.Text))
             {
@@ -46,15 +48,35 @@ namespace WinFormsAddressBook
             }
         }
 
-        private void emailAddressTextBox_Validating(object sender, CancelEventArgs e)
+        private void EmailAddressTextBox_Validating(object sender, CancelEventArgs e)
         {
             ValidateRegex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$", emailAddressTextBox, emailAddressErrorProvider, "Please enter a valid email address", e);
         }
 
-        private void phoneNumberTextBox_Validating(object sender, CancelEventArgs e)
+        private void PhoneNumberTextBox_Validating(object sender, CancelEventArgs e)
         {
             ValidateRegex(@"^[0-9]{10}$", phoneNumberTextBox, phoneNumberErrorProvider, "Please enter a ten digit phone number, including area code, without dashes or spaces.", e);
         }
+        #endregion
+        #region 1.3 Form close event handler
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Add entries from the entries list to the file phone-book.txt.
+            AddEntries(entryList, "phone-book.txt");
+            //            WriteLine("The data was stored properly. Here it is!");
+            // Open phone-book.txt with Notepad.
+            OpenTextFileWithNotepad("phone-book.txt");
+        }
+
+        #endregion
+        #endregion
+
+        #region 2 Helper methods
+        private Entry CreateNewEntry()
+        {
+            return new Entry { Name = nameTextBox.Text, EmailAddress = emailAddressTextBox.Text, PhoneNumber = phoneNumberTextBox.Text };
+        }
+
         private void ValidateRegex(string regexPattern, TextBox textBoxToValidate, ErrorProvider errorProvider, string errorProviderMessage, CancelEventArgs e)
         {
             // Checks whether the textbox input matches the Regex pattern.
@@ -70,14 +92,6 @@ namespace WinFormsAddressBook
             }
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // Add entries from the entries list to the file phone-book.txt.
-            AddEntries(entryList, "phone-book.txt");
-//            WriteLine("The data was stored properly. Here it is!");
-            // Open phone-book.txt with Notepad.
-            OpenTextFileWithNotepad("phone-book.txt");
-        }
         private static void AddEntries(List<Entry> fromEntryList, string toFile)
         {
             // Create a file with the name passed in as a string parameter, and a StreamWriter object to write to it. 
@@ -98,6 +112,7 @@ namespace WinFormsAddressBook
         {
             Process.Start("notepad.exe", fileName);
         }
+        #endregion
 
     }
 }
