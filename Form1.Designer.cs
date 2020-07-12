@@ -35,7 +35,6 @@
             this.phoneNumberLabel = new System.Windows.Forms.Label();
             this.phoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
-            this.addEntryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -92,25 +91,15 @@
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.titleLabel.Location = new System.Drawing.Point(21, 28);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(484, 32);
+            this.titleLabel.Size = new System.Drawing.Size(472, 32);
             this.titleLabel.TabIndex = 6;
-            this.titleLabel.Text = "Fill out the fields below to add a new entry: ";
-            // 
-            // addEntryButton
-            // 
-            this.addEntryButton.Location = new System.Drawing.Point(185, 264);
-            this.addEntryButton.Name = "addEntryButton";
-            this.addEntryButton.Size = new System.Drawing.Size(112, 34);
-            this.addEntryButton.TabIndex = 7;
-            this.addEntryButton.Text = "Add entry";
-            this.addEntryButton.UseVisualStyleBackColor = true;
+            this.titleLabel.Text = "Fill out the fields below to add a new entry";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.addEntryButton);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.phoneNumberTextBox);
             this.Controls.Add(this.phoneNumberLabel);
@@ -134,7 +123,6 @@
         private System.Windows.Forms.Label phoneNumberLabel;
         private System.Windows.Forms.TextBox phoneNumberTextBox;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Button addEntryButton;
     }
 }
 
