@@ -63,7 +63,7 @@ namespace WinFormsAddressBook
 
         private void PhoneNumberTextBox_Validating(object sender, CancelEventArgs e)
         {
-            ValidateRegex(@"^[0-9]{10}$", phoneNumberTextBox, phoneNumberErrorProvider, "Phone number must be 10 numbers, no dashes.", e);
+            ValidateRegex(@"^[0-9]{10}$", phoneNumberTextBox, phoneNumberErrorProvider, "Phone must be 10 digits, no dashes.", e);
         }
         #endregion
         #region 1.3 Form close event handler
