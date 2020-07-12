@@ -21,5 +21,19 @@ namespace WinFormsAddressBook
         {
 
         }
+
+        private void nameTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nameTextBox.Text))
+            {
+                e.Cancel = true;
+                nameTextBox.Focus();
+                nameErrorProvider.SetError(nameTextBox, "Please enter a name for your entry");
+            }
+            else
+            {
+                nameErrorProvider.SetError(nameTextBox, null);
+            }
+        }
     }
 }
