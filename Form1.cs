@@ -39,16 +39,25 @@ namespace WinFormsAddressBook
 
         private void emailAddressTextBox_Validating(object sender, CancelEventArgs e)
         {
-            // Checks whether the textbox input matches the Regex pattern for an email address.
-            if (!Regex.IsMatch(emailAddressTextBox.Text, @"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"))
+            ValidateRegex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$", emailAddressTextBox, emailAddressErrorProvider, "Please enter a valid email address", e);
+        }
+
+        private void phoneNumberTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateRegex(@"^[0-9]{10}$", phoneNumberTextBox, phoneNumberErrorProvider, "Please enter a ten digit phone number, including area code, without dashes or spaces.", e);
+        }
+        private void ValidateRegex(string regexPattern, TextBox textBoxToValidate, ErrorProvider errorProvider, string errorProviderMessage, CancelEventArgs e)
+        {
+            // Checks whether the textbox input matches the Regex pattern.
+            if (!Regex.IsMatch(textBoxToValidate.Text, regexPattern))
             {
                 e.Cancel = true;
-                emailAddressTextBox.Focus();
-                emailAddressErrorProvider.SetError(emailAddressTextBox, "Please enter a valid email address");
+                textBoxToValidate.Focus();
+                errorProvider.SetError(textBoxToValidate, errorProviderMessage);
             }
             else
             {
-                emailAddressErrorProvider.SetError(emailAddressTextBox, null);
+                errorProvider.SetError(textBoxToValidate, null);
             }
         }
     }

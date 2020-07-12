@@ -39,8 +39,10 @@
             this.addEntryButton = new System.Windows.Forms.Button();
             this.nameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.emailAddressErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.phoneNumberErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailAddressErrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneNumberErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -92,6 +94,7 @@
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(150, 31);
             this.phoneNumberTextBox.TabIndex = 5;
+            this.phoneNumberTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.phoneNumberTextBox_Validating);
             // 
             // titleLabel
             // 
@@ -117,9 +120,13 @@
             // 
             this.nameErrorProvider.ContainerControl = this;
             // 
-            // emaillAddressErrorProvider
+            // emailAddressErrorProvider
             // 
             this.emailAddressErrorProvider.ContainerControl = this;
+            // 
+            // phoneNumberErrorProvider
+            // 
+            this.phoneNumberErrorProvider.ContainerControl = this;
             // 
             // Form1
             // 
@@ -138,6 +145,7 @@
             this.Text = "Address Book";
             ((System.ComponentModel.ISupportInitialize)(this.nameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailAddressErrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneNumberErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,6 +164,7 @@
         private System.Windows.Forms.Button addEntryButton;
         private System.Windows.Forms.ErrorProvider nameErrorProvider;
         private System.Windows.Forms.ErrorProvider emailAddressErrorProvider;
+        private System.Windows.Forms.ErrorProvider phoneNumberErrorProvider;
     }
 }
 
